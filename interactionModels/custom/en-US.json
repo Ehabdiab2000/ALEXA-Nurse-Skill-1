@@ -1,0 +1,313 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "emirates nurse",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "NameIntent",
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "samples": [
+                "my name is {name}",
+                "{name}"
+              ]
+            }
+          ],
+          "samples": [
+            "i am {name}",
+            "{name} is my name",
+            "my name is {name}",
+            "name is {name}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "ComplainIntent",
+          "slots": [
+            {
+              "name": "complain",
+              "type": "complain",
+              "samples": [
+                "{complain}"
+              ]
+            }
+          ],
+          "samples": [
+            "{complain} problem",
+            "{complain}",
+            "i have {complain}"
+          ]
+        },
+        {
+          "name": "DoctorIntent",
+          "slots": [
+            {
+              "name": "doctor",
+              "type": "doctor",
+              "samples": [
+                "{doctor}"
+              ]
+            }
+          ],
+          "samples": [
+            "i want an appointment with {doctor}",
+            "meet {doctor}",
+            "appointment with {doctor}",
+            "{doctor}",
+            "doctor {doctor}"
+          ]
+        },
+        {
+          "name": "SpecialityIntent",
+          "slots": [
+            {
+              "name": "speciality",
+              "type": "speciality",
+              "samples": [
+                "{speciality}"
+              ]
+            }
+          ],
+          "samples": [
+            "appointment with {speciality} specialist",
+            "meet {speciality}",
+            "{speciality}",
+            "{speciality} specialist",
+            "get appointment for {speciality} specialist",
+            "meet {speciality} specialist"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "hamad  ",
+                "synonyms": [
+                  "hamad"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Saleh ",
+                "synonyms": [
+                  "Saleh"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "Mera",
+                "synonyms": [
+                  "Mera"
+                ]
+              }
+            }
+          ],
+          "name": "doctor"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "internal medicine",
+                "synonyms": [
+                  "internal medicine"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "chest",
+                "synonyms": [
+                  "chest"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "eyes",
+                "synonyms": [
+                  "eye",
+                  "eyes"
+                ]
+              }
+            }
+          ],
+          "name": "speciality"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "stomackache",
+                "synonyms": [
+                  "stomach ache",
+                  "stomack pain"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "thore throat",
+                "synonyms": [
+                  "throat pain",
+                  "thore throat"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "red eyes",
+                "synonyms": [
+                  "red eye",
+                  "eyes pain"
+                ]
+              }
+            }
+          ],
+          "name": "complain"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "NameIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "name",
+              "type": "AMAZON.FirstName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.581884187311.1367242935392"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ComplainIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "complain",
+              "type": "complain",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.247120349775.579539643521"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DoctorIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "doctor",
+              "type": "doctor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.478603737272.679911351796"
+              }
+            }
+          ]
+        },
+        {
+          "name": "SpecialityIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "speciality",
+              "type": "speciality",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1037955293521.282512210941"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.581884187311.1367242935392",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Kindly tell me your name"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.247120349775.579539643521",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your complain?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.478603737272.679911351796",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the doctor name?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1037955293521.282512210941",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the  specialty?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "11"
+}
